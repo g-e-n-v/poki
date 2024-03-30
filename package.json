@@ -1,0 +1,39 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint --dir .",
+    "tsc": "tsc --project tsconfig.json --pretty --noEmit",
+    "knip": "knip"
+  },
+  "dependencies": {
+    "axios": "^1.6.8",
+    "clsx": "^2.1.0",
+    "dayjs": "^1.11.10",
+    "lodash-es": "^4.17.21",
+    "next": "^14.1.4",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "tailwind-merge": "^2.2.2"
+  },
+  "devDependencies": {
+    "@types/lodash-es": "^4.17.12",
+    "@types/node": "20.11.30",
+    "@types/react": "18.2.67",
+    "@types/react-dom": "18.2.22",
+    "@typescript-eslint/eslint-plugin": "^7.3.1",
+    "@typescript-eslint/parser": "^7.3.1",
+    "autoprefixer": "^10.4.18",
+    "eslint": "^8.57.0",
+    "eslint-config-next": "^14.1.4",
+    "eslint-plugin-jsx-a11y": "^6.8.0",
+    "eslint-plugin-tailwindcss": "^3.15.1",
+    "knip": "^5.1.4",
+    "postcss": "^8.4.37",
+    "tailwindcss": "^3.4.1",
+    "typescript": "^5.4.2"
+  }
+}
