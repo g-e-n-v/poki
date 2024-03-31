@@ -15,7 +15,7 @@ const LINKS = [
   { href: "/en/c/contact", label: "Contact" },
 ];
 
-export const Footer = () => {
+export function Footer() {
   return (
     <footer className="footer-wave mt-28 bg-white px-8">
       <div className={cn("flex flex-col items-center gap-10 py-6", "xl:flex-row")}>
@@ -40,4 +40,4 @@ export const Footer = () => {
       </div>
     </footer>
   );
-};
+}

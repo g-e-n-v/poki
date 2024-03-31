@@ -7,7 +7,7 @@ import IconSearch from "@/assets/icons/search.svg";
 import PokiLogo from "@/assets/images/poki-logo.svg";
 import { cn } from "@/utils/cn.util";
 
-export const Navigation = () => {
+export function Navigation() {
   return (
     <nav className="sticky left-1 top-4 z-20 overflow-hidden rounded-2xl bg-white">
       <div className="flex h-1/2 items-center justify-center border-b border-b-grey-7">
@@ -35,4 +35,4 @@ export const Navigation = () => {
       </div>
     </nav>
   );
-};
+}

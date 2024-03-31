@@ -8,7 +8,7 @@ import { cn } from "@/utils/cn.util";
 
 type CategoryCellProps = Category;
 
-export const CategoryCell = ({ id, name, thumbnail, span }: CategoryCellProps) => {
+export function CategoryCell({ id, name, thumbnail, span }: CategoryCellProps) {
   return (
     <Link
       href={`/categories/${id.toString()}`}
@@ -28,4 +28,4 @@ export const CategoryCell = ({ id, name, thumbnail, span }: CategoryCellProps) =
       )}
     </Link>
   );
-};
+}

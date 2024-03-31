@@ -8,7 +8,7 @@ type NextImageProps = Pick<ImageProps, "alt" | "src"> & {
   objectFit?: "cover" | "contain";
 };
 
-export const NextImage = ({ className, src, alt, objectFit = "cover" }: NextImageProps) => {
+export function NextImage({ className, src, alt, objectFit = "cover" }: NextImageProps) {
   return (
     <div className={cn("relative overflow-hidden", className)}>
       <Image
@@ -22,4 +22,4 @@ export const NextImage = ({ className, src, alt, objectFit = "cover" }: NextImag
       />
     </div>
   );
-};
+}

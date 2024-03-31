@@ -6,11 +6,11 @@ import { cn } from "@/utils/cn.util";
 
 type GameCellProps = Game;
 
-export const GameCell = ({ name, thumbnail, span }: GameCellProps) => {
+export function GameCell({ name, thumbnail, span }: GameCellProps) {
   return (
     <Link
       key={name}
-      href={`/detail/${name}`}
+      href={`/${name}`}
       className={cn(
         "group/cell relative inline-block aspect-square size-cell overflow-hidden rounded-2xl shadow-mid transition-all duration-700 ease-in-out",
         "hover:-translate-y-1 hover:scale-105",
@@ -35,4 +35,4 @@ export const GameCell = ({ name, thumbnail, span }: GameCellProps) => {
       </span>
     </Link>
   );
-};
+}
