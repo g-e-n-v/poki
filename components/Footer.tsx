@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import PokiLogo from "@/assets/images/poki-logo.svg";
+import { cn } from "@/utils/cn.util";
 
 const LINKS = [
   { href: "https://about.poki.com", label: "About" },
@@ -17,14 +18,14 @@ const LINKS = [
 export const Footer = () => {
   return (
     <footer className="footer-wave mt-28 bg-white px-8">
-      <div className="flex gap-8 py-6">
+      <div className={cn("flex flex-col items-center gap-10 py-6", "xl:flex-row")}>
         <div className="flex gap-4">
           <PokiLogo className="h-6" />
           <span className="font-bold text-blue-denim">Let the world play</span>
         </div>
 
         <div className="flex grow justify-end">
-          <ul className="flex gap-5">
+          <ul className="flex flex-wrap justify-center gap-5">
             {LINKS.map((link) => (
               <li key={link.href}>
                 <Link href={link.href} className="underline">
