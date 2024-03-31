@@ -15,6 +15,7 @@ export default {
     extend: {
       spacing: {
         cell: "94px",
+        "2cell": "204px",
         gap: "16px",
       },
       fontFamily: {

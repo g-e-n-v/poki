@@ -2,35 +2,44 @@
   {
     "id": 0,
     "name": "2 PLAYER GAMES",
-    "thumbnail": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/86a2e7c75d67b042e569c75dc24a8c82.png"
+    "thumbnail": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/86a2e7c75d67b042e569c75dc24a8c82.png",
+    "span": 2
   },
   {
     "id": 1,
     "name": "SHOOTING GAMES",
-    "thumbnail": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/fed61537010ea792ae7e5f104c2a8323.png"
+    "thumbnail": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/fed61537010ea792ae7e5f104c2a8323.png",
+    "span": 2
   },
   {
     "id": 2,
     "name": "GAMES FOR GIRLS",
-    "thumbnail": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/92ee01bd30e4ad4fa7b991637374ef48.png"
+    "thumbnail": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/92ee01bd30e4ad4fa7b991637374ef48.png",
+    "span": 2
   },
   {
     "id": 3,
     "name": "MULTIPLAYER GAMES",
-    "thumbnail": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/c60326c15d1592c3ed5f3ca40d68f0c2.png"
+    "thumbnail": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/c60326c15d1592c3ed5f3ca40d68f0c2.png",
+    "span": 2
   },
   {
     "id": 4,
     "name": "CAR GAMES",
-    "thumbnail": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/a3a246c690c18be13906e62be22362a8.png"
+    "thumbnail": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/a3a246c690c18be13906e62be22362a8.png",
+    "span": 2
   },
   {
     "id": 5,
     "name": "STICKMAN GAMES",
-    "thumbnail": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/8b3477db0453e4381acc631d91f8fb19.png"
+    "thumbnail": "https://img.poki.com/cdn-cgi/image/quality=78,width=204,height=204,fit=cover,f=auto/8b3477db0453e4381acc631d91f8fb19.png",
+    "span": 2
   },
   {
-    "id": 6
+    "id": 6,
+    "name": "Poki Kids",
+    "span": 2,
+    "thumbnail": ""
   },
   {
     "id": 7,
