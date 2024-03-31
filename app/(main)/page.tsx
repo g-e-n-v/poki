@@ -1,3 +1,5 @@
+import type { Metadata } from "next";
+
 import { CategoryCell } from "@/components/CategoryCell";
 import { GameCell } from "@/components/GameCell";
 import { Navigation } from "@/components/Navigation";
@@ -26,3 +28,6 @@ export default async function HomePage() {
     </div>
   );
 }
+
+// INFO: add metadata here
+export const metadata: Metadata = {};
