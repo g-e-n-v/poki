@@ -1,5 +1,12 @@
 import type { PropsWithChildren } from "react";
 
+import { Footer } from "@/components/Footer";
+
 export default function MainLayout({ children }: PropsWithChildren) {
-  return <div className="mx-auto min-h-screen max-w-page">{children}</div>;
+  return (
+    <>
+      <main className="mx-auto min-h-screen max-w-page">{children}</main>
+      <Footer />
+    </>
+  );
 }

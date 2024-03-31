@@ -11,6 +11,16 @@
     @apply 12c:grid-cols-12;
     @apply 14c:grid-cols-14;
   }
+
+  .footer-wave {
+    @apply relative;
+  }
+
+  .footer-wave::before {
+    clip-path: polygon(0 100%, 30% 0, 36% 100%, 100% 0, 100% 100%);
+    content: "";
+    @apply absolute block h-6 bg-white -top-6 w-full;
+  }
 }
 
 body {
