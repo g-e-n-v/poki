@@ -2,8 +2,25 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer utilities {
+  .grid-container {
+    @apply grid mx-auto gap-4 w-max grid-flow-dense;
+    @apply grid-cols-7;
+    @apply 9c:grid-cols-9;
+    @apply 11c:grid-cols-11;
+    @apply 12c:grid-cols-12;
+    @apply 14c:grid-cols-14;
+  }
+}
+
+body {
+  background-image: url(../assets/images/bg-diamante.svg);
+  background-size: min(100vw, 100vh);
+  @apply bg-green-7;
+}
+
 ::-webkit-scrollbar {
-  @apply w-3 h-3;
+  @apply w-3 h-0;
 }
 
 ::-webkit-scrollbar-track {
@@ -14,3 +31,12 @@
   @apply bg-slate-200 rounded-full border-4 border-transparent border-solid bg-clip-content;
   @apply hover:bg-slate-300;
 }
+
+/*
+// --fontBody: "Proxima Nova","Open Sans","Gill Sans MT","Gill Sans","Noto Sans Arabic",Arial,sans-serif;
+// --fontTorus: "Torus","Noto Sans Arabic",sans-serif;
+// --bezier: cubic-bezier(.25,.1,.25,1);
+// --cellSize: 94px;
+// --cellSpacing: 16px;
+// --maxPageWidth: 1860px;
+*/
