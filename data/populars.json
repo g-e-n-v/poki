@@ -1,0 +1,32 @@
+[
+  {
+    "id": 0,
+    "name": "Smash Karts",
+    "thumbnail": "https://img.poki.com/cdn-cgi/image/quality=100,width=512,height=512,fit=cover,f=auto/9c9e529b14731be871b07b89660bbc2a.png"
+  },
+  {
+    "id": 1,
+    "name": "Sword Masters",
+    "thumbnail": "https://img.poki.com/cdn-cgi/image/quality=100,width=512,height=512,fit=cover,f=auto/859a801e479835e6a25311d96c225a80.jfif"
+  },
+  {
+    "id": 2,
+    "name": "Hills of Steel",
+    "thumbnail": "https://img.poki.com/cdn-cgi/image/quality=100,width=512,height=512,fit=cover,f=auto/e8a5f2eda2e5340e8ded263692835caa.png"
+  },
+  {
+    "id": 3,
+    "name": "Temple of Boom",
+    "thumbnail": "https://img.poki.com/cdn-cgi/image/quality=100,width=512,height=512,fit=cover,f=auto/d710fe8830d731072485a582881605ea.png"
+  },
+  {
+    "id": 4,
+    "name": "We Become What We Behold",
+    "thumbnail": "https://img.poki.com/cdn-cgi/image/quality=100,width=512,height=512,fit=cover,f=auto/a0929e5428c5af2666c9eeb3a0441d4c.png"
+  },
+  {
+    "id": 5,
+    "name": "Watermelon Drop",
+    "thumbnail": "https://img.poki.com/cdn-cgi/image/quality=100,width=512,height=512,fit=cover,f=auto/02018885c1521dd2830683a0ecc86440.png"
+  }
+]

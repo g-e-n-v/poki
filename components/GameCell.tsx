@@ -12,7 +12,7 @@ export function GameCell({ name, thumbnail, span }: GameCellProps) {
       key={name}
       href={`/${name}`}
       className={cn(
-        "group/cell relative inline-block aspect-square size-cell overflow-hidden rounded-2xl shadow-mid transition-all duration-700 ease-in-out",
+        "group/cell relative inline-block aspect-square size-cell overflow-hidden rounded-2xl bg-white shadow-mid transition-all duration-700 ease-in-out",
         "hover:-translate-y-1 hover:scale-105",
         "hover:after:absolute hover:after:size-full hover:after:bg-[linear-gradient(#0000_25%,#0000004d)] hover:after:shadow-hover",
         {

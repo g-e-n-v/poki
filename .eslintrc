@@ -29,7 +29,8 @@
       {
         "namedComponents": "function-declaration"
       }
-    ]
+    ],
+    "@typescript-eslint/no-floating-promises": "off"
   },
   "ignorePatterns": ["tailwind.config.js", "postcss.config.js", "next.config.mjs", "@types/**/*.d.ts"],
   "settings": {
