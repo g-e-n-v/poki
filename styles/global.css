@@ -12,6 +12,15 @@
     @apply 14c:grid-cols-14;
   }
 
+  .container {
+    @apply mx-auto;
+    @apply w-[calc(94px*7+16px*6)];
+    @apply 9c:w-[calc(94px*9+16px*8)];
+    @apply 11c:w-[calc(94px*11+16px*10)];
+    @apply 12c:w-[calc(94px*12+16px*11)];
+    @apply 14c:w-[calc(94px*14+16px*13)];
+  }
+
   .footer-wave {
     @apply relative;
   }
