@@ -24,7 +24,10 @@ export default async function GameDetailPage({ params }: GameDetailPageProps) {
       <div className={cn("grid-container pt-4")}>
         <Navigation />
 
-        <GamePlay className="col-span-10 col-start-2 row-span-6" {...currentGame} />
+        <GamePlay
+          className={cn("col-span-6 col-start-2 row-span-4", "11c:col-span-8 11c:row-span-5")}
+          {...currentGame}
+        />
 
         {games.map((game) => (
           <GameCell key={game.name} {...game} />

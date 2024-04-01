@@ -19,7 +19,7 @@
   .footer-wave::before {
     clip-path: polygon(0 100%, 30% 0, 36% 100%, 100% 0, 100% 100%);
     content: "";
-    @apply absolute block h-6 bg-white -top-6 w-full;
+    @apply absolute block h-6 bg-white -top-6 w-full left-0;
   }
 }
 

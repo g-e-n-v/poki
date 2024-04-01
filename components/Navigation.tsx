@@ -9,7 +9,7 @@ import { cn } from "@/utils/cn.util";
 
 export function Navigation() {
   return (
-    <nav className="sticky left-1 top-4 z-20 overflow-hidden rounded-2xl bg-white">
+    <nav className="sticky left-1 top-4 z-20 size-cell overflow-hidden rounded-2xl bg-white">
       <div className="flex h-1/2 items-center justify-center border-b border-b-grey-7">
         <PokiLogo className="h-7 origin-center cursor-pointer hover:scale-105" />
       </div>
