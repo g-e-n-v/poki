@@ -4,7 +4,7 @@ import { locales } from "@/translate/i18n";
 
 export default createMiddleware({
   locales,
-  defaultLocale: "en",
+  defaultLocale: "vi",
 });
 
 export const config = {

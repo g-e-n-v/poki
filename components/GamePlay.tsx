@@ -1,5 +1,5 @@
-import IconFullscreen from "@/assets/icons/fullscreen.svg";
-import IconReport from "@/assets/icons/report.svg";
+// import IconFullscreen from "@/assets/icons/fullscreen.svg";
+// import IconReport from "@/assets/icons/report.svg";
 import IconThumbUp from "@/assets/icons/thumb-up.svg";
 import { NextImage } from "@/components/NextImage";
 import type { Game } from "@/types/app.type";
@@ -36,9 +36,9 @@ export function GamePlay({ className, name, thumbnail, owner, likeCount, iframeU
 
         <div className="mr-6 flex gap-8">
           <ActionButton label="Like" icon={<IconThumbUp className="size-6" />} value={likeCount} />
-          <ActionButton label="Dislike" icon={<IconThumbUp className="size-6 rotate-180" />} value={999} />
+          {/* <ActionButton label="Dislike" icon={<IconThumbUp className="size-6 rotate-180" />} value={999} />
           <ActionButton label="Report a bug" icon={<IconReport className="size-6" />} />
-          <ActionButton label="Fullscreen" icon={<IconFullscreen className="size-6" />} />
+          <ActionButton label="Fullscreen" icon={<IconFullscreen className="size-6" />} /> */}
         </div>
       </div>
     </div>

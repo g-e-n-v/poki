@@ -20,7 +20,7 @@ export default function HomePage({ params }: HomePageProps) {
       <div className={cn("grid-container pt-4")}>
         <Navigation />
         {games.map((game) => (
-          <GameCell key={game.name} locale={params.locale} {...game} />
+          <GameCell key={game.id} locale={params.locale} {...game} />
         ))}
       </div>
 

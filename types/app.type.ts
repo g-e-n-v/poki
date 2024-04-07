@@ -1,5 +1,5 @@
 export type Game = {
-  id: number;
+  id: number | string;
   name: string;
   thumbnail: string;
   videoDemoUrl: string;

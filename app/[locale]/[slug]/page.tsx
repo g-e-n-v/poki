@@ -30,9 +30,14 @@ export default function GameDetailPage({ params }: GameDetailPageProps) {
         />
 
         {games.map((game) => (
-          <GameCell key={game.name} locale={params.locale} {...game} />
+          <GameCell key={game.id} locale={params.locale} {...game} />
         ))}
       </div>
+
+      <article
+        className="container mt-20 flex flex-col bg-white px-6 py-5 shadow-mid"
+        dangerouslySetInnerHTML={{ __html: currentGame.howToPlay }}
+      />
     </div>
   );
 }

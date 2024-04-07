@@ -9,10 +9,12 @@ type GameCellProps = Game & {
 };
 
 export function GameCell({ id, name, thumbnail, span, locale = "" }: GameCellProps) {
+  const href = `/${locale}/${name.toLowerCase().split(" ").join("-")}`;
+
   return (
     <Link
-      key={name}
-      href={`/${locale}/${id.toString()}`}
+      key={id}
+      href={href}
       className={cn(
         "group/cell relative inline-block aspect-square size-cell overflow-hidden rounded-2xl bg-white shadow-mid transition-all duration-700 ease-in-out",
         "hover:-translate-y-1 hover:scale-105",
