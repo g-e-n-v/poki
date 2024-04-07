@@ -5,15 +5,13 @@ import { GamePlay } from "@/components/GamePlay";
 import { Navigation } from "@/components/Navigation";
 import { getGameDetail } from "@/services/get-game-detail.service";
 import { getGames } from "@/services/get-games.service";
-import { type Locale } from "@/translate/translator";
 import { cn } from "@/utils/cn.util";
 
 type GameDetailPageProps = {
-  params: { slug: string; lang: Locale };
+  params: { slug: string; locale: string };
 };
 
 export default async function GameDetailPage({ params }: GameDetailPageProps) {
-  // const t = translator[params.lang];
   const games = await getGames();
   const currentGame = await getGameDetail(params.slug);
 
@@ -34,7 +32,7 @@ export default async function GameDetailPage({ params }: GameDetailPageProps) {
         />
 
         {games.map((game) => (
-          <GameCell key={game.name} {...game} />
+          <GameCell key={game.name} locale={params.locale} {...game} />
         ))}
       </div>
     </div>

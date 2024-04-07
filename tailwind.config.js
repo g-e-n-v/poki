@@ -25,7 +25,7 @@ export default {
       },
       colors: {
         blue: {
-          poki: "#009cff",
+          kipo: "#009cff",
           denim: "#002b50",
           3: "#054a91",
           5: "#054a91",

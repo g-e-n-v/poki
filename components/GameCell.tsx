@@ -4,13 +4,15 @@ import { NextImage } from "@/components/NextImage";
 import type { Game } from "@/types/app.type";
 import { cn } from "@/utils/cn.util";
 
-type GameCellProps = Game;
+type GameCellProps = Game & {
+  locale: string;
+};
 
-export function GameCell({ name, thumbnail, span }: GameCellProps) {
+export function GameCell({ name, thumbnail, span, locale }: GameCellProps) {
   return (
     <Link
       key={name}
-      href={`/${name}`}
+      href={`/${locale}/${name}`}
       className={cn(
         "group/cell relative inline-block aspect-square size-cell overflow-hidden rounded-2xl bg-white shadow-mid transition-all duration-700 ease-in-out",
         "hover:-translate-y-1 hover:scale-105",

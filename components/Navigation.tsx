@@ -5,7 +5,7 @@ import { useState } from "react";
 
 import IconHome from "@/assets/icons/home.svg";
 import IconSearch from "@/assets/icons/search.svg";
-import PokiLogo from "@/assets/images/poki-logo.svg";
+import Logo from "@/assets/images/logo.svg";
 import { Sidebar } from "@/components/Sidebar";
 import { cn } from "@/utils/cn.util";
 
@@ -16,7 +16,7 @@ export function Navigation() {
     <>
       <nav className="sticky left-1 top-4 z-20 size-cell overflow-hidden rounded-2xl bg-white">
         <Link href="/" className="flex h-1/2 items-center justify-center border-b border-b-grey-7">
-          <PokiLogo className="h-7 origin-center cursor-pointer hover:scale-105" />
+          <Logo className="h-7 origin-center cursor-pointer hover:scale-105" />
         </Link>
         <div className="flex h-1/2 border-t border-t-grey-7">
           <Link
@@ -26,7 +26,7 @@ export function Navigation() {
               "hover:bg-grey-7"
             )}
           >
-            <IconHome className="size-6 fill-blue-poki" />
+            <IconHome className="size-6 fill-blue-kipo" />
           </Link>
           <button
             className={cn(
@@ -37,7 +37,7 @@ export function Navigation() {
               setShowSidebar(true);
             }}
           >
-            <IconSearch className="size-6 cursor-pointer fill-blue-poki" />
+            <IconSearch className="size-6 cursor-pointer fill-blue-kipo" />
           </button>
         </div>
       </nav>

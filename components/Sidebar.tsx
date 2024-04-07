@@ -25,7 +25,6 @@ export function Sidebar({ open, onClose }: SidebarProps) {
 
   const handleSearchTextChange = useDebounce((e: ChangeEvent<HTMLInputElement>) => {
     const { value } = e.target;
-    console.log("value", value);
     setSearchText(value);
 
     if (value === "") {

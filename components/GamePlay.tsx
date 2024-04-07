@@ -12,7 +12,7 @@ type GamePlayProps = Game & {
 export function GamePlay({ className, name, thumbnail }: GamePlayProps) {
   return (
     <div className={cn("flex flex-col overflow-hidden rounded-2xl bg-white shadow-mid", className)}>
-      <div className="grow bg-blue-poki" />
+      <div className="grow bg-blue-kipo" />
 
       <div className="flex h-16 justify-between p-3 shadow-mid">
         <div className="flex gap-2">
@@ -43,12 +43,12 @@ type ActionButtonProps = {
 
 function ActionButton({ onClick, icon, value = "-", label }: ActionButtonProps) {
   return (
-    <button className="group/btn relative flex items-center fill-blue-poki pb-2 transition-all" onClick={onClick}>
+    <button className="group/btn relative flex items-center fill-blue-kipo pb-2 transition-all" onClick={onClick}>
       <div className="rounded-full p-1 group-hover/btn:-rotate-6 group-hover/btn:bg-grey-7">{icon}</div>
 
       <span
         className={cn(
-          "absolute -bottom-px left-1/2 line-clamp-1 w-max -translate-x-1/2 rounded-full bg-blue-poki px-2 text-[10px] font-semibold text-white opacity-0 transition-all",
+          "absolute -bottom-px left-1/2 line-clamp-1 w-max -translate-x-1/2 rounded-full bg-blue-kipo px-2 text-[10px] font-semibold text-white opacity-0 transition-all",
           "group-hover/btn:opacity-100"
         )}
       >
