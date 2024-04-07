@@ -1,9 +1,13 @@
 export type Game = {
-  id: string | number;
+  id: number;
   name: string;
   thumbnail: string;
-  description?: string;
-  url?: string;
+  videoDemoUrl: string;
+  howToPlay: string;
+  description: string;
+  owner: string;
+  likeCount: number;
+  iframeUrl: string;
   span?: number;
 };
 

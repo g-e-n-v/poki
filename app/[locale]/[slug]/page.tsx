@@ -11,9 +11,9 @@ type GameDetailPageProps = {
   params: { slug: string; locale: string };
 };
 
-export default async function GameDetailPage({ params }: GameDetailPageProps) {
-  const games = await getGames();
-  const currentGame = await getGameDetail(params.slug);
+export default function GameDetailPage({ params }: GameDetailPageProps) {
+  const games = getGames();
+  const currentGame = getGameDetail(params.slug);
 
   if (!currentGame) {
     return redirect("/");
@@ -23,8 +23,6 @@ export default async function GameDetailPage({ params }: GameDetailPageProps) {
     <div className="mx-auto w-max">
       <div className={cn("grid-container pt-4")}>
         <Navigation />
-
-        {/* <div>{t.About}</div> */}
 
         <GamePlay
           className={cn("col-span-6 col-start-2 row-span-4", "11c:col-span-8 11c:row-span-5")}

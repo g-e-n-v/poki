@@ -1,6 +1,12 @@
-import games from "@/data/games.json";
+import { shuffle } from "lodash-es";
 
-export const getGames = async () => {
-  // TODO: fetch games here
-  return await Promise.resolve(games);
+import games from "@/data/games.json";
+import type { Game } from "@/types/app.type";
+
+export const getGames = (): Array<Game> => {
+  const bigGames = (games.big as Array<Game>).map((g) => ({ ...g, span: 3 }));
+  const mediumGames = (games.medium as Array<Game>).map((g) => ({ ...g, span: 2 }));
+  const smallGames = games.small as Array<Game>;
+
+  return shuffle([...bigGames, ...mediumGames, ...smallGames]);
 };

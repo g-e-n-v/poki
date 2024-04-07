@@ -11,8 +11,8 @@ type HomePageProps = {
   params: { locale: string };
 };
 
-export default async function HomePage({ params }: HomePageProps) {
-  const games = await getGames();
+export default function HomePage({ params }: HomePageProps) {
+  const games = getGames();
   // const categories = await getCategories();
 
   return (

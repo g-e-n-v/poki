@@ -8,11 +8,11 @@ type GameCellProps = Game & {
   locale: string;
 };
 
-export function GameCell({ name, thumbnail, span, locale }: GameCellProps) {
+export function GameCell({ id, name, thumbnail, span, locale }: GameCellProps) {
   return (
     <Link
       key={name}
-      href={`/${locale}/${name}`}
+      href={`/${locale}/${id.toString()}`}
       className={cn(
         "group/cell relative inline-block aspect-square size-cell overflow-hidden rounded-2xl bg-white shadow-mid transition-all duration-700 ease-in-out",
         "hover:-translate-y-1 hover:scale-105",

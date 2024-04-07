@@ -1,24 +1,24 @@
-"use client";
+// "use client";
 
 import Link from "next/link";
-import { useState } from "react";
 
-import IconHome from "@/assets/icons/home.svg";
-import IconSearch from "@/assets/icons/search.svg";
+// import { useState } from "react";
+// import IconHome from "@/assets/icons/home.svg";
+// import IconSearch from "@/assets/icons/search.svg";
+// import { Sidebar } from "@/components/Sidebar";
+// import { cn } from "@/utils/cn.util";
 import Logo from "@/assets/images/logo.svg";
-import { Sidebar } from "@/components/Sidebar";
-import { cn } from "@/utils/cn.util";
 
 export function Navigation() {
-  const [showSidebar, setShowSidebar] = useState(false);
+  // const [showSidebar, setShowSidebar] = useState(false);
 
   return (
     <>
       <nav className="sticky left-1 top-4 z-20 size-cell overflow-hidden rounded-2xl bg-white">
-        <Link href="/" className="flex h-1/2 items-center justify-center border-b border-b-grey-7">
+        <Link href="/" className="flex h-full items-center justify-center border-b border-b-grey-7">
           <Logo className="h-7 origin-center cursor-pointer hover:scale-105" />
         </Link>
-        <div className="flex h-1/2 border-t border-t-grey-7">
+        {/* <div className="flex h-1/2 border-t border-t-grey-7">
           <Link
             href={"/"}
             className={cn(
@@ -39,15 +39,15 @@ export function Navigation() {
           >
             <IconSearch className="size-6 cursor-pointer fill-blue-kipo" />
           </button>
-        </div>
+        </div> */}
       </nav>
 
-      <Sidebar
+      {/* <Sidebar
         open={showSidebar}
         onClose={() => {
           setShowSidebar(false);
         }}
-      />
+      /> */}
     </>
   );
 }

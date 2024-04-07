@@ -9,23 +9,34 @@ type GamePlayProps = Game & {
   className?: string;
 };
 
-export function GamePlay({ className, name, thumbnail }: GamePlayProps) {
+export function GamePlay({ className, name, thumbnail, owner, likeCount, iframeUrl }: GamePlayProps) {
   return (
     <div className={cn("flex flex-col overflow-hidden rounded-2xl bg-white shadow-mid", className)}>
-      <div className="grow bg-blue-kipo" />
+      <div className="grow bg-blue-kipo">
+        <iframe
+          className="size-full"
+          allowFullScreen
+          allow="autoplay; fullscreen; camera; focus-without-user-activation *; monetization; gamepad; keyboard-map *; xr-spatial-tracking; clipboard-write; web-share; accelerometer; magnetometer; gyroscope"
+          name="gameFrame"
+          scrolling="no"
+          sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-scripts allow-same-origin allow-downloads"
+          title="Game"
+          src={iframeUrl}
+        />
+      </div>
 
       <div className="flex h-16 justify-between p-3 shadow-mid">
         <div className="flex gap-2">
           <NextImage alt={name} className="size-10 rounded-lg" src={thumbnail} />
           <div className="flex flex-col justify-between">
             <span className="text-sm font-bold text-blue-denim">{name}</span>
-            <span className="text-xs">Author</span>
+            <span className="text-xs">{owner}</span>
           </div>
         </div>
 
         <div className="mr-6 flex gap-8">
-          <ActionButton label="Like" icon={<IconThumbUp className="size-6" />} value={123} />
-          <ActionButton label="Dislike" icon={<IconThumbUp className="size-6 rotate-180" />} value={123} />
+          <ActionButton label="Like" icon={<IconThumbUp className="size-6" />} value={likeCount} />
+          <ActionButton label="Dislike" icon={<IconThumbUp className="size-6 rotate-180" />} value={999} />
           <ActionButton label="Report a bug" icon={<IconReport className="size-6" />} />
           <ActionButton label="Fullscreen" icon={<IconFullscreen className="size-6" />} />
         </div>

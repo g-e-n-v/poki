@@ -115,7 +115,7 @@ export function Sidebar({ open, onClose }: SidebarProps) {
 
         <div className="flex gap-4">
           {popularGames?.map((game) => (
-            <GameCell key={game.id} {...game} />
+            <GameCell key={game.id} locale="en" {...game} />
           ))}
         </div>
       </aside>
