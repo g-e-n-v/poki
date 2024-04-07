@@ -5,10 +5,10 @@ import type { Game } from "@/types/app.type";
 import { cn } from "@/utils/cn.util";
 
 type GameCellProps = Game & {
-  locale: string;
+  locale?: string;
 };
 
-export function GameCell({ id, name, thumbnail, span, locale }: GameCellProps) {
+export function GameCell({ id, name, thumbnail, span, locale = "" }: GameCellProps) {
   return (
     <Link
       key={name}
