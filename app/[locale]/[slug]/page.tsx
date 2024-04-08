@@ -1,4 +1,4 @@
-import { redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 
 import { GameCell } from "@/components/GameCell";
 import { GamePlay } from "@/components/GamePlay";
@@ -16,7 +16,8 @@ export default function GameDetailPage({ params }: GameDetailPageProps) {
   const currentGame = getGameDetail(params.slug);
 
   if (!currentGame) {
-    return redirect("/");
+    // return redirect("/");
+    return notFound();
   }
 
   return (
