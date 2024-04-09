@@ -1,8 +1,11 @@
-import { notFound } from "next/navigation";
+import { redirect } from "next/navigation";
 
 import { GameCell } from "@/components/GameCell";
 import { GamePlay } from "@/components/GamePlay";
+import { MobileGameInfo } from "@/components/MobileGameInfo";
+import { MobileGamePlay } from "@/components/MobileGamePlay";
 import { Navigation } from "@/components/Navigation";
+import { getDeviceType } from "@/services/get-device-type.service";
 import { getGameDetail } from "@/services/get-game-detail.service";
 import { getGames } from "@/services/get-games.service";
 import { cn } from "@/utils/cn.util";
@@ -16,18 +19,28 @@ export default function GameDetailPage({ params }: GameDetailPageProps) {
   const currentGame = getGameDetail(params.slug);
 
   if (!currentGame) {
-    return notFound();
+    return redirect("/");
   }
+
+  const isMobile = getDeviceType() === "mobile";
 
   return (
     <div className="mx-auto w-max">
-      <div className={cn("grid-container pt-4")}>
+      <div className={cn("pt-4", isMobile ? "grid-container-mobile" : "grid-container")}>
         <Navigation />
 
-        <GamePlay
-          className={cn("col-span-6 col-start-2 row-span-4", "11c:col-span-8 11c:row-span-5")}
-          {...currentGame}
-        />
+        {isMobile && (
+          <MobileGameInfo className="col-span-2 h-cell w-cell-2 " name={currentGame.name} author={currentGame.owner} />
+        )}
+
+        {isMobile ? (
+          <MobileGamePlay className="col-span-3 row-span-3 size-cell-3" {...currentGame} />
+        ) : (
+          <GamePlay
+            className={cn("col-span-6 col-start-2 row-span-4", "11c:col-span-8 11c:row-span-5")}
+            {...currentGame}
+          />
+        )}
 
         {games.map((game) => (
           <GameCell key={game.id} locale={params.locale} {...game} />
@@ -35,7 +48,7 @@ export default function GameDetailPage({ params }: GameDetailPageProps) {
       </div>
 
       <article
-        className="container mt-20 flex flex-col bg-white px-6 py-5 shadow-mid"
+        className={cn("mt-20 flex flex-col bg-white px-6 py-5 shadow-mid", isMobile ? "container-mobile" : "container")}
         dangerouslySetInnerHTML={{ __html: currentGame.howToPlay }}
       />
     </div>

@@ -12,6 +12,10 @@
     @apply c14:grid-cols-14 c14:w-cell-14;
   }
 
+  .grid-container-mobile {
+    @apply grid mx-auto gap-cell-g w-max grid-flow-dense grid-cols-3;
+  }
+
   .container {
     @apply mx-auto;
     @apply w-cell-7;
@@ -19,6 +23,10 @@
     @apply c11:w-cell-11;
     @apply c12:w-cell-12;
     @apply c14:w-cell-14;
+  }
+
+  .container-mobile {
+    @apply mx-auto w-cell-3;
   }
 
   .footer-wave {

@@ -1,10 +1,11 @@
 import type { Metadata } from "next";
-import { notFound, redirect } from "next/navigation";
+import { notFound } from "next/navigation";
 
 // import { CategoryCell } from "@/components/CategoryCell";
+// import { getCategories } from "@/services/get-categories.service";
 import { GameCell } from "@/components/GameCell";
 import { Navigation } from "@/components/Navigation";
-// import { getCategories } from "@/services/get-categories.service";
+import { getDeviceType } from "@/services/get-device-type.service";
 import { getGames } from "@/services/get-games.service";
 import { locales } from "@/translate/i18n";
 import { cn } from "@/utils/cn.util";
@@ -16,16 +17,18 @@ type HomePageProps = {
 export default function HomePage({ params }: HomePageProps) {
   const { locale } = params;
   if (!locales.includes(locale)) {
-    // redirect("/");
     notFound();
   }
+
+  const isMobile = getDeviceType() === "mobile";
+  console.log({ isMobile });
 
   const games = getGames();
   // const categories = await getCategories();
 
   return (
     <div className={cn("mx-auto flex flex-col px-2")}>
-      <div className={cn("grid-container pt-4")}>
+      <div className={cn("pt-4", isMobile ? "grid-container-mobile" : "grid-container")}>
         <Navigation />
         {games.map((game) => (
           <GameCell key={game.id} locale={locale} {...game} />
@@ -38,7 +41,9 @@ export default function HomePage({ params }: HomePageProps) {
         ))}
       </div> */}
 
-      <article className="container mt-20 flex flex-col bg-white px-6 py-5 shadow-mid">
+      <article
+        className={cn("mt-20 flex flex-col bg-white px-6 py-5 shadow-mid", isMobile ? "container-mobile" : "container")}
+      >
         <div className="text-[10px] uppercase text-blue-denim">About LESOR</div>
         <header>
           <h1 className="text-xl font-bold text-blue-denim">Free Online Games</h1>

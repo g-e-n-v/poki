@@ -17,3 +17,5 @@ export type Category = {
   thumbnail: string;
   span?: number;
 };
+
+export type DeviceType = "mobile" | "desktop";

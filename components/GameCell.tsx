@@ -9,7 +9,7 @@ type GameCellProps = Game & {
   locale?: string;
 };
 
-export function GameCell({ id, name, thumbnail, span, locale = "", videoDemoUrl }: GameCellProps) {
+export function GameCell({ id, name, thumbnail, span = 1, locale = "", videoDemoUrl }: GameCellProps) {
   const href = `/${locale}/${name.toLowerCase().split(" ").join("-")}`;
 
   return (
@@ -17,12 +17,13 @@ export function GameCell({ id, name, thumbnail, span, locale = "", videoDemoUrl 
       key={id}
       href={href}
       className={cn(
-        "group/cell relative inline-block aspect-square size-cell overflow-hidden rounded-2xl bg-white shadow-mid transition-all duration-700 ease-in-out",
+        "group/cell relative inline-block aspect-square overflow-hidden rounded-2xl bg-white shadow-mid transition-all duration-700 ease-in-out",
         "hover:-translate-y-1 hover:scale-105",
         "hover:after:absolute hover:after:size-full hover:after:bg-[linear-gradient(#0000_25%,#0000004d)] hover:after:shadow-hover",
         {
-          "col-span-3 row-span-3 size-full": span === 3,
-          "col-span-2 row-span-2 size-full": span === 2,
+          "size-cell": span === 1,
+          "col-span-2 row-span-2 size-cell-2": span === 2,
+          "col-span-3 row-span-3 size-cell-3": span === 3,
         }
       )}
     >
