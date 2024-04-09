@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
+import { notFound, redirect } from "next/navigation";
 
 // import { CategoryCell } from "@/components/CategoryCell";
 import { GameCell } from "@/components/GameCell";
 import { Navigation } from "@/components/Navigation";
 // import { getCategories } from "@/services/get-categories.service";
 import { getGames } from "@/services/get-games.service";
+import { locales } from "@/translate/i18n";
 import { cn } from "@/utils/cn.util";
 
 type HomePageProps = {
@@ -12,6 +14,12 @@ type HomePageProps = {
 };
 
 export default function HomePage({ params }: HomePageProps) {
+  const { locale } = params;
+  if (!locales.includes(locale)) {
+    // redirect("/");
+    notFound();
+  }
+
   const games = getGames();
   // const categories = await getCategories();
 
@@ -20,7 +28,7 @@ export default function HomePage({ params }: HomePageProps) {
       <div className={cn("grid-container pt-4")}>
         <Navigation />
         {games.map((game) => (
-          <GameCell key={game.id} locale={params.locale} {...game} />
+          <GameCell key={game.id} locale={locale} {...game} />
         ))}
       </div>
 
