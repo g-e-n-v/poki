@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 import { NextImage } from "@/components/NextImage";
-import { defaultVideoDemo } from "@/data/mock.json";
+import mock from "@/data/mock.json";
 import type { Game } from "@/types/app.type";
 import { cn } from "@/utils/cn.util";
 
@@ -44,7 +44,7 @@ export function GameCell({ id, name, thumbnail, span, locale = "", videoDemoUrl 
         playsInline
         muted
         autoPlay
-        src={videoDemoUrl || defaultVideoDemo}
+        src={videoDemoUrl || mock.defaultVideoDemo}
         className={cn("absolute left-0 top-0 z-10 hidden size-full", "group-hover/cell:block")}
       />
     </Link>
