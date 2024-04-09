@@ -21,7 +21,6 @@ export default function HomePage({ params }: HomePageProps) {
   }
 
   const isMobile = getDeviceType() === "mobile";
-  console.log({ isMobile });
 
   const games = getGames();
   // const categories = await getCategories();
