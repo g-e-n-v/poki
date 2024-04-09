@@ -12,9 +12,10 @@ type GamePlayProps = Game & {
 export function GamePlay({ className, name, thumbnail, owner, likeCount, iframeUrl }: GamePlayProps) {
   return (
     <div className={cn("flex flex-col overflow-hidden rounded-2xl bg-white shadow-mid", className)}>
-      <div className="grow bg-blue-kipo">
+      <div className="relative flex grow items-center justify-center bg-blue-kipo">
+        <div className="loader" />
         <iframe
-          className="size-full"
+          className="absolute left-0 top-0 size-full bg-gray-200"
           allowFullScreen
           allow="autoplay; fullscreen; camera; focus-without-user-activation *; monetization; gamepad; keyboard-map *; xr-spatial-tracking; clipboard-write; web-share; accelerometer; magnetometer; gyroscope"
           name="gameFrame"
