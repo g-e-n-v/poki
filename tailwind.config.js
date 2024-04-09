@@ -1,6 +1,7 @@
-import plugin from "tailwindcss/plugin";
-
 const defaultTheme = require("tailwindcss/defaultTheme");
+
+const CELL_WIDTH = 94;
+const CELL_GAP = 16;
 
 /** @type {import('tailwindcss').Config} */
 export default {
@@ -14,9 +15,15 @@ export default {
   theme: {
     extend: {
       spacing: {
-        cell: "94px",
-        "2cell": "204px",
-        gap: "16px",
+        cell: `${CELL_WIDTH}px`,
+        "cell-g": `${CELL_GAP}px`,
+        ...[2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14].reduce(
+          (spacings, num) => ({
+            ...spacings,
+            [`cell-${num}`]: `${num * CELL_WIDTH + (num - 1) * CELL_GAP}px`,
+          }),
+          {}
+        ),
       },
       fontFamily: {
         sans: ["var(--font-sans)", ...defaultTheme.fontFamily.sans],
@@ -89,18 +96,11 @@ export default {
       maxWidth: {
         page: "1860px",
       },
-      width: {
-        "7-cells": "754px",
-        "9-cells": "974px",
-        "11-cells": "1194px",
-        "12-cells": "1304px",
-        "14-cells": "1524px",
-      },
       screens: {
-        "9c": "991px",
-        "11c": "1211px",
-        "12c": "1321px",
-        "14c": "1541px",
+        c9: "991px",
+        c11: "1211px",
+        c12: "1321px",
+        c14: "1541px",
       },
       gridTemplateColumns: {
         14: "repeat(14, minmax(0, 1fr)) !important",

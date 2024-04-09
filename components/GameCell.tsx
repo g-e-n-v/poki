@@ -14,7 +14,6 @@ export function GameCell({ id, name, thumbnail, span, locale = "" }: GameCellPro
   return (
     <Link
       key={id}
-      // href={`/${locale}/${id.toString()}`}
       href={href}
       className={cn(
         "group/cell relative inline-block aspect-square size-cell overflow-hidden rounded-2xl bg-white shadow-mid transition-all duration-700 ease-in-out",
@@ -38,6 +37,10 @@ export function GameCell({ id, name, thumbnail, span, locale = "" }: GameCellPro
       >
         {name}
       </span>
+
+      <video loop playsInline autoPlay>
+        <track kind="captions" hidden />
+      </video>
     </Link>
   );
 }

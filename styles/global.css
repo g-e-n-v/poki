@@ -4,21 +4,21 @@
 
 @layer utilities {
   .grid-container {
-    @apply grid mx-auto gap-4 w-max grid-flow-dense;
-    @apply grid-cols-7;
-    @apply 9c:grid-cols-9;
-    @apply 11c:grid-cols-11;
-    @apply 12c:grid-cols-12;
-    @apply 14c:grid-cols-14;
+    @apply grid mx-auto gap-cell-g w-max grid-flow-dense;
+    @apply grid-cols-7 w-cell-7;
+    @apply c9:grid-cols-9 c9:w-cell-9;
+    @apply c11:grid-cols-11 c11:w-cell-11;
+    @apply c12:grid-cols-12 c12:w-cell-12;
+    @apply c14:grid-cols-14 c14:w-cell-14;
   }
 
   .container {
     @apply mx-auto;
-    @apply w-[calc(94px*7+16px*6)];
-    @apply 9c:w-[calc(94px*9+16px*8)];
-    @apply 11c:w-[calc(94px*11+16px*10)];
-    @apply 12c:w-[calc(94px*12+16px*11)];
-    @apply 14c:w-[calc(94px*14+16px*13)];
+    @apply w-cell-7;
+    @apply c9:w-cell-9;
+    @apply c11:w-cell-11;
+    @apply c12:w-cell-12;
+    @apply c14:w-cell-14;
   }
 
   .footer-wave {

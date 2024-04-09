@@ -16,7 +16,6 @@ export default function GameDetailPage({ params }: GameDetailPageProps) {
   const currentGame = getGameDetail(params.slug);
 
   if (!currentGame) {
-    // return redirect("/");
     return notFound();
   }
 
