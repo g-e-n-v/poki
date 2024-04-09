@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { NextImage } from "@/components/NextImage";
+import { defaultVideoDemo } from "@/data/mock.json";
 import type { Game } from "@/types/app.type";
 import { cn } from "@/utils/cn.util";
 
@@ -8,7 +9,7 @@ type GameCellProps = Game & {
   locale?: string;
 };
 
-export function GameCell({ id, name, thumbnail, span, locale = "" }: GameCellProps) {
+export function GameCell({ id, name, thumbnail, span, locale = "", videoDemoUrl }: GameCellProps) {
   const href = `/${locale}/${name.toLowerCase().split(" ").join("-")}`;
 
   return (
@@ -38,9 +39,14 @@ export function GameCell({ id, name, thumbnail, span, locale = "" }: GameCellPro
         {name}
       </span>
 
-      <video loop playsInline autoPlay>
-        <track kind="captions" hidden />
-      </video>
+      <video
+        loop
+        playsInline
+        muted
+        autoPlay
+        src={videoDemoUrl || defaultVideoDemo}
+        className={cn("absolute left-0 top-0 z-10 hidden size-full", "group-hover/cell:block")}
+      />
     </Link>
   );
 }
