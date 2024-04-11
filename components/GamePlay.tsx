@@ -23,6 +23,7 @@ export function GamePlay({ className, name, thumbnail, owner, likeCount, iframeU
           sandbox="allow-forms allow-modals allow-orientation-lock allow-pointer-lock allow-popups allow-popups-to-escape-sandbox allow-presentation allow-scripts allow-same-origin allow-downloads"
           title="Game"
           src={iframeUrl}
+          loading="lazy"
         />
       </div>
 
