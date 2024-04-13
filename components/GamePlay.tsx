@@ -1,5 +1,7 @@
 // import IconFullscreen from "@/assets/icons/fullscreen.svg";
 // import IconReport from "@/assets/icons/report.svg";
+import { useTranslations } from "next-intl";
+
 import IconThumbUp from "@/assets/icons/thumb-up.svg";
 import { NextImage } from "@/components/NextImage";
 import type { Game } from "@/types/app.type";
@@ -10,6 +12,8 @@ type GamePlayProps = Game & {
 };
 
 export function GamePlay({ className, name, thumbnail, owner, likeCount, iframeUrl }: GamePlayProps) {
+  const t = useTranslations();
+
   return (
     <div className={cn("flex flex-col overflow-hidden rounded-2xl bg-white shadow-mid", className)}>
       <div className="relative flex grow items-center justify-center bg-blue-kipo">
@@ -37,7 +41,7 @@ export function GamePlay({ className, name, thumbnail, owner, likeCount, iframeU
         </div>
 
         <div className="mr-6 flex gap-8">
-          <ActionButton label="Like" icon={<IconThumbUp className="size-6" />} value={likeCount} />
+          <ActionButton label={t("Like")} icon={<IconThumbUp className="size-6" />} value={likeCount} />
           {/* <ActionButton label="Dislike" icon={<IconThumbUp className="size-6 rotate-180" />} value={999} />
           <ActionButton label="Report a bug" icon={<IconReport className="size-6" />} />
           <ActionButton label="Fullscreen" icon={<IconFullscreen className="size-6" />} /> */}
