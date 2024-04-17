@@ -5,7 +5,6 @@ import { useState } from "react";
 import IconArrow from "@/assets/icons/arrow.svg";
 import IconPlay from "@/assets/icons/play.svg";
 import { NextImage } from "@/components/NextImage";
-import type { Game } from "@/types/app.type";
 import { cn } from "@/utils/cn.util";
 
 type MobileGamePlayProps = Game & {

@@ -1,4 +1,3 @@
-import { isString } from "lodash-es";
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 
@@ -63,6 +62,6 @@ export const generateMetadata = ({ params }: CategoryPageRouteProps): Metadata =
   return {
     title: category?.name,
     description: category?.description,
-    keywords: [category?.name, category?.description].filter(isString),
+    keywords: category?.keywords,
   };
 };

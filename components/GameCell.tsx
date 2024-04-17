@@ -2,7 +2,6 @@ import Link from "next/link";
 
 import { NextImage } from "@/components/NextImage";
 import { getGameSlug } from "@/services/get-game-slug.service";
-import type { Game } from "@/types/app.type";
 import { cn } from "@/utils/cn.util";
 
 type GameCellProps = Game & {

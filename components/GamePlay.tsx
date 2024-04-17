@@ -4,7 +4,6 @@ import { useTranslations } from "next-intl";
 
 import IconThumbUp from "@/assets/icons/thumb-up.svg";
 import { NextImage } from "@/components/NextImage";
-import type { Game } from "@/types/app.type";
 import { cn } from "@/utils/cn.util";
 
 type GamePlayProps = Game & {

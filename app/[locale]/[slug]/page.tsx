@@ -1,4 +1,3 @@
-import { isString } from "lodash-es";
 import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 
@@ -73,6 +72,6 @@ export const generateMetadata = ({ params }: GameDetailPageRouteProps): Metadata
   return {
     title: game?.name,
     description: game?.description,
-    keywords: [game?.name, game?.owner].filter(isString),
+    keywords: game?.keywords,
   };
 };

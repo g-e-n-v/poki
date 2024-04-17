@@ -1,7 +1,6 @@
 import { shuffle } from "lodash-es";
 
 import games from "@/data/games.json";
-import type { Game } from "@/types/app.type";
 
 export const getGames = (): Array<Game> => {
   const bigGames = (games.big as Array<Game>).map((g) => ({ ...g, span: 3 }));

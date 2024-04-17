@@ -3,7 +3,6 @@ import Link from "next/link";
 import KidsGames from "@/assets/images/kids-games.svg";
 import { NextImage } from "@/components/NextImage";
 import { KIDS_NAME } from "@/constants/app.constant";
-import type { Category } from "@/types/app.type";
 import { cn } from "@/utils/cn.util";
 
 type CategoryCellProps = Category & { locale: string; isMobile: boolean };

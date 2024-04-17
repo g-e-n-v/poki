@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 
 import popularGames from "@/data/populars.json";
-import type { Game } from "@/types/app.type";
 
 export function useGetPopularGames() {
   const [data, setData] = useState<Array<Game>>();

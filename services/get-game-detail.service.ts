@@ -1,5 +1,4 @@
 import games from "@/data/games.json";
-import type { Game } from "@/types/app.type";
 
 export const getGameDetail = (name: string): Game | undefined => {
   const bigGames = (games.big as Array<Game>).map((g) => ({ ...g, span: 3 }));
