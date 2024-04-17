@@ -1,3 +1,5 @@
+import { isString } from "lodash-es";
+import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 
 import { GameCell } from "@/components/GameCell";
@@ -11,9 +13,11 @@ import { getGameSlug } from "@/services/get-game-slug.service";
 import { getGames } from "@/services/get-games.service";
 import { cn } from "@/utils/cn.util";
 
-type GameDetailPageProps = {
+type GameDetailPageRouteProps = {
   params: { slug: string; locale: string };
 };
+
+type GameDetailPageProps = GameDetailPageRouteProps;
 
 export default function GameDetailPage({ params }: GameDetailPageProps) {
   const games = getGames();
@@ -61,3 +65,14 @@ export function generateStaticParams() {
 
   return games.map((game) => ({ slug: getGameSlug(game.name) }));
 }
+
+export const generateMetadata = ({ params }: GameDetailPageRouteProps): Metadata => {
+  const { slug } = params;
+  const game = getGameDetail(slug);
+
+  return {
+    title: game?.name,
+    description: game?.description,
+    keywords: [game?.name, game?.owner].filter(isString),
+  };
+};

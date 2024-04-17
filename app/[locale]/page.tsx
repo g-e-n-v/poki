@@ -34,9 +34,9 @@ export default function HomePage({ params }: HomePageProps) {
         ))}
       </div>
 
-      <div className={cn("grid-container pt-4")}>
+      <div className={cn("pt-4", isMobile ? "grid-container-mobile" : "grid-container")}>
         {categories.map((category) => (
-          <CategoryCell key={category.id} locale={locale} {...category} />
+          <CategoryCell key={category.id} locale={locale} isMobile={isMobile} {...category} />
         ))}
       </div>
 

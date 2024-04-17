@@ -1,3 +1,5 @@
+import { isString } from "lodash-es";
+import type { Metadata } from "next";
 import { redirect } from "next/navigation";
 
 import { GameCell } from "@/components/GameCell";
@@ -7,9 +9,11 @@ import { getDeviceType } from "@/services/get-device-type.service";
 import { getGames } from "@/services/get-games.service";
 import { cn } from "@/utils/cn.util";
 
-type CategoryPageProps = {
+type CategoryPageRouteProps = {
   params: { slug: string; locale: string };
 };
+
+type CategoryPageProps = CategoryPageRouteProps;
 
 export default function CategoryPage({ params }: CategoryPageProps) {
   const { slug } = params;
@@ -51,3 +55,14 @@ export default function CategoryPage({ params }: CategoryPageProps) {
     </div>
   );
 }
+
+export const generateMetadata = ({ params }: CategoryPageRouteProps): Metadata => {
+  const { slug } = params;
+  const category = getCategoryDetail(slug);
+
+  return {
+    title: category?.name,
+    description: category?.description,
+    keywords: [category?.name, category?.description].filter(isString),
+  };
+};
