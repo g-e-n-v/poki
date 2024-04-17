@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { NextImage } from "@/components/NextImage";
+import { getGameSlug } from "@/services/get-game-slug.service";
 import type { Game } from "@/types/app.type";
 import { cn } from "@/utils/cn.util";
 
@@ -9,7 +10,7 @@ type GameCellProps = Game & {
 };
 
 export function GameCell({ id, name, thumbnail, span = 1, locale = "", videoDemoUrl }: GameCellProps) {
-  const href = `/${locale}/${name.toLowerCase().split(" ").join("-")}`;
+  const href = `/${locale}/${getGameSlug(name)}`;
 
   return (
     <Link

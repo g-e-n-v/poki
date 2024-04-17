@@ -7,6 +7,7 @@ import { MobileGamePlay } from "@/components/MobileGamePlay";
 import { Navigation } from "@/components/Navigation";
 import { getDeviceType } from "@/services/get-device-type.service";
 import { getGameDetail } from "@/services/get-game-detail.service";
+import { getGameSlug } from "@/services/get-game-slug.service";
 import { getGames } from "@/services/get-games.service";
 import { cn } from "@/utils/cn.util";
 
@@ -53,4 +54,10 @@ export default function GameDetailPage({ params }: GameDetailPageProps) {
       />
     </div>
   );
+}
+
+export function generateStaticParams() {
+  const games = getGames();
+
+  return games.map((game) => ({ slug: getGameSlug(game.name) }));
 }
