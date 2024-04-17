@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 
-// import { CategoryCell } from "@/components/CategoryCell";
-// import { getCategories } from "@/services/get-categories.service";
+import { CategoryCell } from "@/components/CategoryCell";
 import { GameCell } from "@/components/GameCell";
 import { Navigation } from "@/components/Navigation";
+import { getCategories } from "@/services/get-categories.service";
 import { getDeviceType } from "@/services/get-device-type.service";
 import { getGames } from "@/services/get-games.service";
 import { locales } from "@/translate/i18n";
@@ -23,7 +23,7 @@ export default function HomePage({ params }: HomePageProps) {
   const isMobile = getDeviceType() === "mobile";
 
   const games = getGames();
-  // const categories = await getCategories();
+  const categories = getCategories();
 
   return (
     <div className={cn("mx-auto flex flex-col px-2")}>
@@ -34,11 +34,11 @@ export default function HomePage({ params }: HomePageProps) {
         ))}
       </div>
 
-      {/* <div className={cn("grid-container pt-4")}>
+      <div className={cn("grid-container pt-4")}>
         {categories.map((category) => (
-          <CategoryCell key={category.id} {...category} />
+          <CategoryCell key={category.id} locale={locale} {...category} />
         ))}
-      </div> */}
+      </div>
 
       <article
         className={cn("mt-20 flex flex-col bg-white px-6 py-5 shadow-mid", isMobile ? "container-mobile" : "container")}

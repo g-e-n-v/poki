@@ -1,1 +1,1 @@
-export const POKI_KIDS_NAME = "Poki Kids";
+export const KIDS_NAME = "Poki Kids";
